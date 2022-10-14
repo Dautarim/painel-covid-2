@@ -11,7 +11,7 @@
     --preto: #000;
 
    
-    --sobra: 0px 24px 74px rgba(0, 0, 0, 0.151);
+    --sobra: 0px 24px 74px rgba(0, 0, 0, 0.16);
 
 }
 
@@ -27,21 +27,20 @@ header
 {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100vw;
+    justify-content: space-between;
     padding-inline: 20px;
     padding-block: 10px;
-    position: fixed;
+   /* position: fixed;
     top: 0;
     left: 0;
     background: transparent;
-    z-index: 11100;
-    background-blend-mode: difference;
+    z-index: 100;
+    background-blend-mode: difference;*/
 }
 
 header .logo-painel-covid h1 span
 {
-    font-family: 'Smooch', cursive;
+  
     padding-right: 5px;
     font-size: .8em;
     
@@ -207,14 +206,15 @@ footer .instituicoes
     margin-top: 100px;
     margin-bottom: 60px;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 
 footer .instituicoes .box-img-instituto
 {
   
-    height: 60px;
-    width: calc(4.5 * 60px);
+    height: 100px;
+    width: calc(5 * 60px);
     object-fit: cover;
 }
 
@@ -225,3 +225,8 @@ footer .instituicoes .box-img-instituto img
     
 }
 
+
+footer .instituicoes .box-img-instituto:nth-child(3)
+{
+    width: calc(6 * 60px);
+}
