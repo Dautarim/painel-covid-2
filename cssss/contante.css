@@ -30,12 +30,20 @@ header
     justify-content: space-between;
     padding-inline: 20px;
     padding-block: 10px;
-   /* position: fixed;
+  
+}
+
+header.ativo
+{
+    width: 98%;
+    position: fixed;
     top: 0;
     left: 0;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.452);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--sobra);
     z-index: 100;
-    background-blend-mode: difference;*/
+    background-blend-mode: difference;
 }
 
 header .logo-painel-covid h1 span
@@ -102,6 +110,11 @@ header .logo-unilab img
     object-fit: cover;
 }
 
+header .menu-icone
+{
+    display: none;
+}
+
 
 /*==================footer====================*/
 
@@ -141,13 +154,18 @@ footer .fontes .main-box-links-das-fontes
 {
     display: flex;
     justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;
     width: 100%;
+    padding-inline: 20px ;
 }
 
 footer .fontes .main-box-links-das-fontes .box-links-das-fontes
 {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 24px;
 }
 
@@ -155,6 +173,7 @@ footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info
 {
     display: flex;
     align-items: center;
+    text-align: center;
 }
 
 footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info p
@@ -183,14 +202,18 @@ footer .fontes .main-box-links-das-fontes .box-links-das-fontes .a-info a:hover
 
 }
 
+
 footer .fontes .atualizcao
 {
+   
     margin-top: 32px;
     box-shadow: var(--sobra);
     padding: 17px 5px ;
     padding-left: 15px;
     border-radius: 50px;
 }
+
+
 
 footer .fontes .atualizcao span
 {
@@ -207,7 +230,11 @@ footer .instituicoes
     margin-bottom: 60px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
     justify-content: space-around;
+
+    padding-inline: 20px;
 }
 
 footer .instituicoes .box-img-instituto
@@ -229,4 +256,152 @@ footer .instituicoes .box-img-instituto img
 footer .instituicoes .box-img-instituto:nth-child(3)
 {
     width: calc(6 * 60px);
+}
+
+/*-----------------RESPONSIVIDADE 1-------------------------*/
+
+@media screen and (max-width: 1110px ) and (min-width: 810px )
+{
+    header .logo-unilab
+    {
+        display: none;
+    }
+
+    header .logo-painel-covid h1
+    {
+        font-size: 24px;
+    }
+
+
+}
+
+@media screen and (max-width: 809px ) 
+{
+    
+
+    header .logo-unilab
+    {
+        display: none;
+    }
+
+    header .logo-painel-covid h1
+    {
+        font-size: 20px;
+    }
+
+    header .logo-painel-covid h1 span
+    {
+        font-size: .7em;
+    }
+
+    header nav
+    {
+       display: none;
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       
+       box-shadow: var(--sobra);
+       background: var(--branco);
+       z-index: 111;
+       padding-block: 50px;
+       
+    }
+
+    header nav.ativo
+    {
+        display: block;
+    }
+
+    header nav ul 
+    {
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 30px;
+    }
+
+    header nav ul li a
+    {
+        font-size: 20px;
+        padding: 5px 30px;
+    }
+
+    header.ativo .menu-icone
+    {
+        margin-right: 30px;
+        background: rgba(255, 255, 255, 0.63);
+    }
+
+    header .menu-icone
+    {
+        position: relative;
+        display: block;
+        border-radius: 10px;
+       
+        
+        width: 40px;
+        height: 40px;
+        box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.144);
+        transition: all .3s;
+
+        z-index: 1111;
+    
+    }
+
+    header .menu-icone ion-icon
+    {
+       
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 2em;
+        opacity: 0;
+        transition: all .3s;
+        
+    }
+    
+    header .menu-icone ion-icon.ativo
+    {
+        opacity: 1;
+    }
+
+    /*-------------------FOOTER-------------------------*/
+
+    footer .fontes .atualizcao p
+    {
+    font-size: 15px;
+    }
+
+    footer .fontes .main-box-links-das-fontes .box-links-das-fontes
+    {
+        flex-direction: column;
+    }
+    footer .fontes .main-box-links-das-fontes .box-links-das-fontes .tipo-de-info p
+    {
+        font-size: 1.1em;
+    }
+
+    footer .instituicoes .box-img-instituto
+    {
+  
+    height: auto;
+    width: calc(2* 60px);
+    object-fit: cover;
+    }
+
+    footer .instituicoes .box-img-instituto img
+    {
+    width: 100%;
+    height: 100%;
+    
+    }
+
+
+    footer .instituicoes .box-img-instituto:nth-child(3)
+    {
+        width: calc(2 * 60px);
+    }
+
 }

@@ -26,40 +26,78 @@
 
 
 /*===========================Main================================*/
-main
+
+body
 {
-    width: 100%;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: #000;
+    border-radius: 5px;
 }
 
 main section.parte1
 {
-    width: 100%;
-  
     background: #ffffff ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
     display: flex;
     align-items: center;
 
 }
 
+main section.parte1.ativo
+{
+    margin-top: 100px;
+}
+
+main section.parte1 .slide::-webkit-scrollbar
+{
+    height: 5px;
+    background-color: transparent;
+}
+
+main section.parte1 .slide::-webkit-scrollbar-thumb
+{
+    background-color: #000;
+    border-radius: 5px;
+}
+
 main section.parte1 .slide
 {
-    overflow-x: auto;
     width: 100%;
+    padding-inline: 20px;
+    overflow-x: auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 50px;
-    padding-block: 100px;
+    padding-block: 100px ;
 
+}
+
+main section.parte1 .slide::-webkit-scrollbar-track
+{
+    background: transparent;
+    
+}
+
+main section.parte1 .slide::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: var(--preto);
 }
 
 main section.parte1 .slide .card 
 {
     width: 200px;
+    height: 288px;
     border-radius: 20px;
    
    
@@ -149,6 +187,51 @@ main section.parte2
     width: 100%;
     height: 500px;
     background: var(--branco);
+}
+
+
+/*-----------------------RESPONSIVIDADE --------------------------*/
+
+@media screen and (max-width: 750px)
+{
+    main section.parte1 .slide
+    {
+        justify-content: space-between;
+        gap: 30px;
+        overflow-x: scroll;
+    }
+
+    main section.parte1 .slide .card .nome-da-cidade-box h4
+    {
+        font-size: .8em;
+    }
+
+    main section.parte1 .slide .card:nth-child(3) .nome-da-cidade-box h4
+    {
+        font-size: .7em;
+    }
+
+    main section.parte1 .slide .card .informacoes .infos .nome
+    {
+        font-size: .9em;
+    }
+
+    main section.parte1 .slide .card .informacoes .infos .numero
+    {
+        font-size: 1em;
+    }
+
+    main section.parte1 .slide .card .informacoes .atualizacao .nome
+    {
+        font-size: .9em;
+        padding-inline: 10px;
+    }
+
+    main section.parte1 .slide .card .informacoes .atualizacao .data
+    {
+        font-size: .9em;
+    }
+    
 }
 
 
