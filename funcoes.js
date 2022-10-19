@@ -18,7 +18,7 @@ function abrefecha()
 
 addEventListener('scroll', function rolou()
 {
-    if(this.window.scrollY >= 1)
+    if(this.window.scrollY > 0)
     {
         cabecalho.classList.add('ativo')
         mainparte1.classList.add('ativo')
